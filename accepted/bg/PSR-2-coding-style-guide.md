@@ -166,15 +166,15 @@ use OtherVendor\OtherPackage\BazClass;
 4. Класове, Свойства и методи
 -----------------------------
 
-The term "class" refers to all classes, interfaces, and traits.
+Терминът „клас“ се отнася до всички класове, интерфейси и traits.
 
-### 4.1. Extends and Implements
+### 4.1. Наследявания и реализации
 
-The `extends` and `implements` keywords MUST be declared on the same line as
-the class name.
+Ключовите думи `extends` и `implements` ТРЯБВА да се декларират на същия ред
+на който е и името на класа.
 
-The opening brace for the class MUST go on its own line; the closing brace
-for the class MUST go on the next line after the body.
+Отварящата скоба за класа ТРЯБВА да е на нов ред; затварящата скоба на класа
+ТРЯБВА да е на следващ ред след тялото.
 
 ```php
 <?php
@@ -186,13 +186,14 @@ use OtherVendor\OtherPackage\BazClass;
 
 class ClassName extends ParentClass implements \ArrayAccess, \Countable
 {
-    // constants, properties, methods
+    // константи, свойства, методи
 }
 ```
 
-Lists of `implements` MAY be split across multiple lines, where each
-subsequent line is indented once. When doing so, the first item in the list
-MUST be on the next line, and there MUST be only one interface per line.
+Изброяването на `implements` МОЖЕ да се раздели на няколко реда, като
+всеки ред трябва да се премести един път навътре. Правейки това, първият
+елемент от списъка ТРЯБВА да е на следващия ред и ТРЯБВА да има само
+един интерфейс на ред.
 
 ```php
 <?php
@@ -207,22 +208,22 @@ class ClassName extends ParentClass implements
     \Countable,
     \Serializable
 {
-    // constants, properties, methods
+    // константи, свойства, методи
 }
 ```
 
-### 4.2. Properties
+### 4.2. Свойства
 
-Visibility MUST be declared on all properties.
+Видимостта ТРЯБВА да се декларира на всички свойства.
 
-The `var` keyword MUST NOT be used to declare a property.
+Ключовата дума `var` НЕ ТРЯБВА да се използва при декларация.
 
-There MUST NOT be more than one property declared per statement.
+НЕ ТРЯБВА да има повече от едно декларирано свойство на ред.
 
-Property names SHOULD NOT be prefixed with a single underscore to indicate
-protected or private visibility.
+Имената на свойствата НЕ БИ ТРЯБВАЛО да започват с единично подчертаващо
+тире, индикиращо видимост protected или private.
 
-A property declaration looks like the following.
+Декларацията за свойство  изглежда по следния начин.
 
 ```php
 <?php
@@ -234,20 +235,20 @@ class ClassName
 }
 ```
 
-### 4.3. Methods
+### 4.3. Методи
 
-Visibility MUST be declared on all methods.
+Видимостта ТРЯБВА да се декларира на всички методи.
 
-Method names SHOULD NOT be prefixed with a single underscore to indicate
-protected or private visibility.
+Методите НЕ БИ ТРЯБВАЛО да започват с единично подчертаващо тире, индикиращо
+видимост protected или private.
 
-Method names MUST NOT be declared with a space after the method name. The
-opening brace MUST go on its own line, and the closing brace MUST go on the
-next line following the body. There MUST NOT be a space after the opening
-parenthesis, and there MUST NOT be a space before the closing parenthesis.
+Имената на методите НЕ ТРЯБВА да се декларират с интервал след името си.
+Отварящата скоба ТРЯБВА да е на нов ред и затварящата ТРЯБВА да е на нов
+ред, веднага след тялото. НЕ ТРЯБВА да има интервал след отварящата скоба
+и не ТРЯБВА да има интервал преди затварящата скоба.
 
-A method declaration looks like the following. Note the placement of
-parentheses, commas, spaces, and braces:
+Декларацията на метод изглежда по следния начин. Забележете позицията на
+къдравите скобите, запетаите, интервалите и кръглите скоби.
 
 ```php
 <?php
@@ -257,18 +258,17 @@ class ClassName
 {
     public function fooBarBaz($arg1, &$arg2, $arg3 = [])
     {
-        // method body
+        // тяло на метода
     }
 }
 ```
 
-### 4.4. Method Arguments
+### 4.4. Аргументи на метод
 
-In the argument list, there MUST NOT be a space before each comma, and there
-MUST be one space after each comma.
+В списъка с аргументи НЕ ТРЯБВА да има интервал преди всяка запетая; ТРЯБВА
+да има интервал след всяка запетая.
 
-Method arguments with default values MUST go at the end of the argument
-list.
+Аргументи с подразбиращи се стойности ТРЯБВА да се поставят в края на списъка.
 
 ```php
 <?php
@@ -278,18 +278,18 @@ class ClassName
 {
     public function foo($arg1, &$arg2, $arg3 = [])
     {
-        // method body
+        // тяло на метода
     }
 }
 ```
 
-Argument lists MAY be split across multiple lines, where each subsequent line
-is indented once. When doing so, the first item in the list MUST be on the
-next line, and there MUST be only one argument per line.
+Списъкът с аргументи МОЖЕ да се раздели на няколко реда, където всеки под-ред
+се отмества навътре. Правейки това, първият елемент в списъка ТРЯБВА да е на
+нов ред и ТРЯБВА да има един аргумент на ред.
 
-When the argument list is split across multiple lines, the closing parenthesis
-and opening brace MUST be placed together on their own line with one space
-between them.
+Когато списъкът е разделен на няколко реда, затварящата кръгла и отварящата
+къдрава скоба ТРЯБВА да се поставят заедно на нов свой ред с един интервал
+помежду им.
 
 ```php
 <?php
@@ -307,13 +307,12 @@ class ClassName
 }
 ```
 
-### 4.5. `abstract`, `final`, and `static`
+### 4.5. `abstract`, `final`, и `static`
 
-When present, the `abstract` and `final` declarations MUST precede the
-visibility declaration.
+Когато присъстват, декларациите `abstract` и `final` ТРЯБВА да предшестват
+декларацията за видимост.
 
-When present, the `static` declaration MUST come after the visibility
-declaration.
+Когато присъства, декларацията `static` ТРЯБВА да е след тази за видимост.
 
 ```php
 <?php
@@ -332,13 +331,12 @@ abstract class ClassName
 }
 ```
 
-### 4.6. Method and Function Calls
+### 4.6. Извикване на методи и функции
 
-When making a method or function call, there MUST NOT be a space between the
-method or function name and the opening parenthesis, there MUST NOT be a space
-after the opening parenthesis, and there MUST NOT be a space before the
-closing parenthesis. In the argument list, there MUST NOT be a space before
-each comma, and there MUST be one space after each comma.
+Когато се извиква метод или функция, НЕ ТРЯБВА да има интервал между името
+на функцията или метода, и отварящата скоба. НЕ ТРЯБВА да има интервал
+след отварящата и преди затварящата скоба. В списъкът с аргументи НЕ ТРЯБВА
+да има интервал преди всяка запетая, ТРЯБВА да има интервал след нея.
 
 ```php
 <?php
@@ -346,10 +344,9 @@ bar();
 $foo->bar($arg1);
 Foo::bar($arg2, $arg3);
 ```
-
-Argument lists MAY be split across multiple lines, where each subsequent line
-is indented once. When doing so, the first item in the list MUST be on the
-next line, and there MUST be only one argument per line.
+Списъкът с аргументи може да се раздели на няколко реда, като всеки ред
+е отместен веднъж навътре. Правейки това, първият елемент от списъка ТРЯБВА
+да е на нов ред и ТРЯБВА да има един аргумент на ред.
 
 ```php
 <?php
