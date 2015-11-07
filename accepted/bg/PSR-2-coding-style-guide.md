@@ -486,24 +486,25 @@ try {
 }
 ```
 
-6. Closures
------------
+6. Затварящи функции (closure)
+------------------------------
 
-Closures MUST be declared with a space after the `function` keyword, and a
-space before and after the `use` keyword.
+Функциите ТРЯБВА да се декларират с интервал след ключовата дума `function` и
+с интервал преди ключовата дума `use`.
 
-The opening brace MUST go on the same line, and the closing brace MUST go on
-the next line following the body.
+Отварящата скоба ТРЯБВА да е на същия ред, а затварящата скоба – ТРЯБВА да е
+на следващия ред след тялото.
 
-There MUST NOT be a space after the opening parenthesis of the argument list
-or variable list, and there MUST NOT be a space before the closing parenthesis
-of the argument list or variable list.
+НЕ ТРЯБВА да има интервал след отварящата и преди затварящата кръгла скоба
+за списъка с аргументи или променливи.
 
-In the argument list and variable list, there MUST NOT be a space before each
-comma, and there MUST be one space after each comma.
+В списъка с аргументи и променливи, НЕ ТРЯБВА да има интервал преди всяка запетая,
+но ТРЯБВА да има след всяка.
 
-Closure arguments with default values MUST go at the end of the argument
-list.
+Аргументи с подразбиращи се стойности ТРЯБВА да се поставят в края на списъка.
+
+Декларация на затваряща функция изглежда по следният начин. Забележете
+местоположението на кръглите скоби, запетаите, интервалите и къдравите скоби.
 
 A closure declaration looks like the following. Note the placement of
 parentheses, commas, spaces, and braces:
@@ -511,25 +512,25 @@ parentheses, commas, spaces, and braces:
 ```php
 <?php
 $closureWithArgs = function ($arg1, $arg2) {
-    // body
+    // тяло
 };
 
 $closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
-    // body
+    // тяло
 };
 ```
 
-Argument lists and variable lists MAY be split across multiple lines, where
-each subsequent line is indented once. When doing so, the first item in the
-list MUST be on the next line, and there MUST be only one argument or variable
-per line.
+Списъкът с аргументи и променливи МОЖЕ да се раздели на няколко реда, като
+всеки под-ред е изместен навътре. Правейки това, първият елемент на
+списъка ТРЯБВА да е на нов ред, и ТРЯБВА да има един аргумент или променлива
+на ред.
 
-When the ending list (whether or arguments or variables) is split across
-multiple lines, the closing parenthesis and opening brace MUST be placed
-together on their own line with one space between them.
+Когато завършващият списък (без значение аргументи или променливи) е разбит
+на няколко реда, затварящата кръгла скоба и отварящата къдрава ТРЯБВА да се
+поставят на нов ред, една до друга, разделени с интервал помежду им.
 
-The following are examples of closures with and without argument lists and
-variable lists split across multiple lines.
+Следващите примери показват затварящи функции с и без списък от аргументи и
+променливи, разбити на няколко реда.
 
 ```php
 <?php
@@ -538,7 +539,7 @@ $longArgs_noVars = function (
     $longerArgument,
     $muchLongerArgument
 ) {
-   // body
+   // тяло
 };
 
 $noArgs_longVars = function () use (
@@ -546,7 +547,7 @@ $noArgs_longVars = function () use (
     $longerVar2,
     $muchLongerVar3
 ) {
-   // body
+   // тяло
 };
 
 $longArgs_longVars = function (
@@ -558,7 +559,7 @@ $longArgs_longVars = function (
     $longerVar2,
     $muchLongerVar3
 ) {
-   // body
+   // тяло
 };
 
 $longArgs_shortVars = function (
@@ -566,7 +567,7 @@ $longArgs_shortVars = function (
     $longerArgument,
     $muchLongerArgument
 ) use ($var1) {
-   // body
+   // тяло
 };
 
 $shortArgs_longVars = function ($arg) use (
@@ -574,51 +575,51 @@ $shortArgs_longVars = function ($arg) use (
     $longerVar2,
     $muchLongerVar3
 ) {
-   // body
+   // тяло
 };
 ```
 
-Note that the formatting rules also apply when the closure is used directly
-in a function or method call as an argument.
+Забележете, че правилата за форматиране важат и когато затварящата функция се
+използва директно в извикването на метод или друга функция като аргумент.
 
 ```php
 <?php
 $foo->bar(
     $arg1,
     function ($arg2) use ($var1) {
-        // body
+        // тяло
     },
     $arg3
 );
 ```
 
 
-7. Conclusion
---------------
+7. Заключение
+-------------
 
-There are many elements of style and practice intentionally omitted by this
-guide. These include but are not limited to:
+Има много аспекти на стилизацията, непрокрити от това ръководство. Те включват
+но не са огринечи до:
 
-- Declaration of global variables and global constants
+- Декларация на глобални променливи и константи
 
-- Declaration of functions
+- Декларация на функции
 
-- Operators and assignment
+- Оператори и присвоявания
 
-- Inter-line alignment
+- Подравняване на редове
 
-- Comments and documentation blocks
+- Коментари и документиращи блокове
 
-- Class name prefixes and suffixes
+- Представки и надствки към класовите имена
 
-- Best practices
+- Най-добри практики
 
-Future recommendations MAY revise and extend this guide to address those or
-other elements of style and practice.
+Бъдещи препоръки МОЖЕ да променят и допълват това ръководство, за да се адресират
+тези други елементи за стилизиране.
 
 
-Appendix A. Survey
-------------------
+Приложение А. Изследване
+------------------------
 
 In writing this style guide, the group took a survey of member projects to
 determine common practices.  The survey is retained herein for posterity.
