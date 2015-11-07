@@ -357,69 +357,68 @@ $foo->bar(
 );
 ```
 
-5. Control Structures
----------------------
+5. Управляващи конструкции
+--------------------------
 
-The general style rules for control structures are as follows:
+Основните стилови правила за управляващите структури са:
 
-- There MUST be one space after the control structure keyword
-- There MUST NOT be a space after the opening parenthesis
-- There MUST NOT be a space before the closing parenthesis
-- There MUST be one space between the closing parenthesis and the opening
-  brace
-- The structure body MUST be indented once
-- The closing brace MUST be on the next line after the body
+- ТРЯБВА да има интервал след ключова дума на управляващата структура
+- НЕ ТРЯБВА да има интервал след отваряща къдрава скоба
+- НЕ ТРЯБВА да има интервал преди затваряща къдрава скоба
+- ТРЯБВА да има интервал между затваряща къдрава скоба и отваряща кръгла скоба
+- Тялото на структурата ТРЯБВА веднъж да бъде отместено навътре
+- Затварящата скоба ТРЯБВА да е на следващ ред след тялото
 
-The body of each structure MUST be enclosed by braces. This standardizes how
-the structures look, and reduces the likelihood of introducing errors as new
-lines get added to the body.
+Тялото на всяка структура ТРЯБВА да се обгради със скоби. Това стандартизира
+изгледът на структурата и намалява вероятността за поява на грешки, когато
+нови редове се добавят към тялото.
 
 
 ### 5.1. `if`, `elseif`, `else`
 
-An `if` structure looks like the following. Note the placement of parentheses,
-spaces, and braces; and that `else` and `elseif` are on the same line as the
-closing brace from the earlier body.
+Оператора `if` изглежда по следния начин. Забележете местоположението на къдравите
+скоби, интервали и кръглите скоби, а също и това че `else` и `elseif` са на същия
+ред на който и затварящата скоба от предишното тяло.
 
 ```php
 <?php
 if ($expr1) {
-    // if body
+    // ако тяло
 } elseif ($expr2) {
-    // elseif body
+    // или ако тяло
 } else {
-    // else body;
+    // или тяло;
 }
 ```
 
-The keyword `elseif` SHOULD be used instead of `else if` so that all control
-keywords look like single words.
+Ключовата дума `elseif` БИ ТРЯБВАЛО да се използва вместо `else if`, за да изглеждат
+всички управляващи конструкции като единични ключови думи.
 
 
 ### 5.2. `switch`, `case`
 
-A `switch` structure looks like the following. Note the placement of
-parentheses, spaces, and braces. The `case` statement MUST be indented once
-from `switch`, and the `break` keyword (or other terminating keyword) MUST be
-indented at the same level as the `case` body. There MUST be a comment such as
-`// no break` when fall-through is intentional in a non-empty `case` body.
+Структурата на `switch` изглежда по следния начин. Забележете местоположението
+на къдравите скоби, интервалите и кръглите скоби. Конструкцията `case` ТРЯБВА
+да бъде отместена веднъж навътре спрямо `switch`, а `break` (или друга терминираща
+дума) ТРЯБВА да бъде подравнена на същото ниво на което е тялото на `case`.
+ТРЯБВА да има коментар като `// no break` при умишлено нетерминиран `case`.
 
 ```php
 <?php
 switch ($expr) {
     case 0:
-        echo 'First case, with a break';
+        echo 'Първи случай, с прекъсване';
         break;
     case 1:
-        echo 'Second case, which falls through';
+        echo 'Втори случай, преминаващ надолу';
         // no break
     case 2:
     case 3:
     case 4:
-        echo 'Third case, return instead of break';
+        echo 'Трети случай, return вместо break';
         return;
     default:
-        echo 'Default case';
+        echo 'Случай по подразбиране';
         break;
 }
 ```
@@ -427,30 +426,30 @@ switch ($expr) {
 
 ### 5.3. `while`, `do while`
 
-A `while` statement looks like the following. Note the placement of
-parentheses, spaces, and braces.
+Конструкцията `while` изглежда по този начин. Забележете местоположението
+на къдравите скоби, интервалите и кръглите скоби.
 
 ```php
 <?php
 while ($expr) {
-    // structure body
+    // тяло на структурата
 }
 ```
 
-Similarly, a `do while` statement looks like the following. Note the placement
-of parentheses, spaces, and braces.
+По същия начин, конструкцията `do while` изглежда по следния начин. Забележете
+местоположението на къдравите скоби, интервалите и кръглите скоби.
 
 ```php
 <?php
 do {
-    // structure body;
+    // тяло на структурата;
 } while ($expr);
 ```
 
 ### 5.4. `for`
 
-A `for` statement looks like the following. Note the placement of parentheses,
-spaces, and braces.
+Конструкцията `for` изглежда по този начин. Забележете местоположението
+на къдравите скоби, интервалите и кръглите скоби.
 
 ```php
 <?php
@@ -461,8 +460,8 @@ for ($i = 0; $i < 10; $i++) {
 
 ### 5.5. `foreach`
 
-A `foreach` statement looks like the following. Note the placement of
-parentheses, spaces, and braces.
+Конструкцията `foreach` изглежда по този начин. Забележете местоположението
+на къдравите скоби, интервалите и кръглите скоби.
 
 ```php
 <?php
@@ -473,17 +472,17 @@ foreach ($iterable as $key => $value) {
 
 ### 5.6. `try`, `catch`
 
-A `try catch` block looks like the following. Note the placement of
-parentheses, spaces, and braces.
+Блокът `try catch` изглежда по този начин. Забележете местоположението
+на къдравите скоби, интервалите и кръглите скоби.
 
 ```php
 <?php
 try {
-    // try body
+    // try тяло
 } catch (FirstExceptionType $e) {
-    // catch body
+    // catch тяло
 } catch (OtherExceptionType $e) {
-    // catch body
+    // catch тяло
 }
 ```
 
