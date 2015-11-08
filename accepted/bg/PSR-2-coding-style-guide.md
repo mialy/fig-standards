@@ -113,7 +113,7 @@ class Foo extends Bar implements FooInterface
 
 В края на не-празните редове НЕ ТРЯБВА да има бяло поле.
 
-Празни редове МОЖЕ да бъдат добавяни за да се подобри четливостта и, за да се покаже
+Празни редове МОЖЕ да бъдат добавяни, за да се подобри четливостта и, за да се покаже
 връзка между блоковете с код.
 
 НЕ ТРЯБВА да има повече от една конструкция на ред.
@@ -618,10 +618,11 @@ $foo->bar(
 Приложение А. Изследване
 ------------------------
 
-In writing this style guide, the group took a survey of member projects to
-determine common practices.  The survey is retained herein for posterity.
+За написането на това ръководство, групата е направила изследване на база
+член-проекти, за да определи общите практики. Изследването е записано тук за
+идните поколения.
 
-### A.1. Survey Data
+### A.1. Данни на изследването
 
     url,http://www.horde.org/apps/horde/docs/CODING_STANDARDS,http://pear.php.net/manual/en/standards.php,http://solarphp.com/manual/appendix-standards.style,http://framework.zend.com/manual/en/coding-standard.html,http://symfony.com/doc/2.0/contributing/code/standards.html,http://www.ppi.io/docs/coding-standards.html,https://github.com/ezsystems/ezp-next/wiki/codingstandards,http://book.cakephp.org/2.0/en/contributing/cakephp-coding-conventions.html,https://github.com/UnionOfRAD/lithium/wiki/Spec%3A-Coding,http://drupal.org/coding-standards,http://code.google.com/p/sabredav/,http://area51.phpbb.com/docs/31x/coding-guidelines.html,https://docs.google.com/a/zikula.org/document/edit?authkey=CPCU0Us&hgd=1&id=1fcqb93Sn-hR9c0mkN6m_tyWnmEvoswKBtSc0tKkZmJA,http://www.chisimba.com,n/a,https://github.com/Respect/project-info/blob/master/coding-standards-sample.php,n/a,Object Calisthenics for PHP,http://doc.nette.org/en/coding-standard,http://flow3.typo3.org,https://github.com/propelorm/Propel2/wiki/Coding-Standards,http://developer.joomla.org/coding-standards.html
     voting,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,no,no,no,?,yes,no,yes
@@ -647,72 +648,72 @@ determine common practices.  The survey is retained herein for posterity.
     blank_line_after_php,no,no,no,no,yes,no,no,no,no,yes,yes,no,no,yes,?,yes,yes,no,yes,no,yes,no
     class_method_control_brace,next/next/same,next/next/same,next/next/same,next/next/same,next/next/same,same/same/same,next/next/next,same/same/same,same/same/same,same/same/same,same/same/same,next/next/next,next/next/same,next/same/same,next/next/next,next/next/same,next/next/same,next/next/same,next/next/same,same/same/same,next/next/same,next/next/next
 
-### A.2. Survey Legend
+### A.2. Легенда
 
 `indent_type`:
-The type of indenting. `tab` = "Use a tab", `2` or `4` = "number of spaces"
+Тип на отстъпа. `tab` = "използване на табулатор", `2` или `4` = "брой интервали"
 
 `line_length_limit_soft`:
-The "soft" line length limit, in characters. `?` = not discernible or no response, `no` means no limit.
+Препоръчителна дължина на реда, в символи. `?` = липса на отговор, `no` означава без ограничение.
 
 `line_length_limit_hard`:
-The "hard" line length limit, in characters. `?` = not discernible or no response, `no` means no limit.
+Твърд лимит на дължина на реда, в символи. `?` = липса на отговор, `no` означава без ограничение.
 
 `class_names`:
-How classes are named. `lower` = lowercase only, `lower_under` = lowercase with underscore separators, `studly` = StudlyCase.
+Как класовете са именувани. `lower` = долен регистър, `lower_under` = долен регистър с разделител подчертаващо тире, `studly` = StudlyCase.
 
 `class_brace_line`:
-Does the opening brace for a class go on the `same` line as the class keyword, or on the `next` line after it?
+Дали отварящата къдрава скоба на класа е на същия ред (`same`) с ключовата дума class, или на следващия (`next`)?
 
 `constant_names`:
-How are class constants named? `upper` = Uppercase with underscore separators.
+Как са именувани константите в класа? `upper` = Горен регистър с разделител подчертаващо тире.
 
 `true_false_null`:
-Are the `true`, `false`, and `null` keywords spelled as all `lower` case, or all `upper` case?
+Дали ключовите думи `true`, `false` и `null` са в долен регистър (`lower`) или в горен (`upper`)?
 
 `method_names`:
-How are methods named? `camel` = `camelCase`, `lower_under` = lowercase with underscore separators.
+Как са именувани методите? `camel` = `camelCase`, `lower_under` = долен регистър с разделител подчертаващо тире.
 
 `method_brace_line`:
-Does the opening brace for a method go on the `same` line as the method name, or on the `next` line?
+Дали отварящата къдрава скоба на метода е на същия ред (`same`) като името на метода, или на следващия (`next`)?
 
 `control_brace_line`:
-Does the opening brace for a control structure go on the `same` line, or on the `next` line?
+Дали къдревата скоба на управляващата конструкция остава на същия ред (`same`) или се поставя на следващ (`next`)?
 
 `control_space_after`:
-Is there a space after the control structure keyword?
+Има ли интервал след ключовата дума за управляваща конструкция?
 
 `always_use_control_braces`:
-Do control structures always use braces?
+Дали управляващата конструкция има винаги скоби?
 
 `else_elseif_line`:
-When using `else` or `elseif`, does it go on the `same` line as the previous closing brace, or does it go on the `next` line?
+Когато се използват `else` или `elseif` – остават ли на същия ред (`same`), където е предишно затворената скоба, или отиват на нов ред (`next`)?
 
 `case_break_indent_from_switch`:
-How many times are `case` and `break` indented from an opening `switch` statement?
+Колко пъти навътре се отместват `case` и `break` спрямо отварящата конструкция `switch`?
 
 `function_space_after`:
-Do function calls have a space after the function name and before the opening parenthesis?
+Дали извикванията на функции съдържат интервал след името на функцията и преди отварящата скоба?
 
 `closing_php_tag_required`:
-In files containing only PHP, is the closing `?>` tag required?
+Във файловете, съдържащи само PHP код, изисква ли се затварящ таг `?>`?
 
 `line_endings`:
-What type of line ending is used?
+Какъв тип край на реда е използван?
 
 `static_or_visibility_first`:
-When declaring a method, does `static` come first, or does the visibility come first?
+Когато се декларира метод, дали `static` идва първи, или видимостта е първа?
 
 `control_space_parens`:
-In a control structure expression, is there a space after the opening parenthesis and a space before the closing parenthesis? `yes` = `if ( $expr )`, `no` = `if ($expr)`.
+В изразите в контролните конструкции, има ли интервал след отварящата и след затварящата скоба? `yes` = `if ( $expr )`, `no` = `if ($expr)`.
 
 `blank_line_after_php`:
-Is there a blank line after the opening PHP tag?
+Има ли празен ред след отварящия таг на PHP?
 
 `class_method_control_brace`:
-A summary of what line the opening braces go on for classes, methods, and control structures.
+Обобщение на това къде отива отварящата скоба за класове, методи и контролни конструкции.
 
-### A.3. Survey Results
+### A.3. Резултат от изследването
 
     indent_type:
         tab: 7
